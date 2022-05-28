@@ -71,7 +71,7 @@ ${cyan}|
 ${purple}|
 ${yellow} \
 ${red}                                          [v${version}]
-${blue}                                    [By XPHANTOM]                                 
+${blue}                                    [By KasRoudra]                                 
 "
 
 # Package Installer
