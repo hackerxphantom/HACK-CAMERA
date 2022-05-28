@@ -70,8 +70,8 @@ ${red} / _
 ${cyan}| 
 ${purple}|
 ${yellow} \
-${red}                                            [v${version}]
-${blue}                                    [By KasRoudra]
+${red}                                         
+${blue}                                    
 "
 
 # Package Installer
