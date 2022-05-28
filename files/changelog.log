@@ -1,0 +1,2 @@
+1. Added argument support. Run 'bash hack_camera.sh -h' to check
+2. Made the port customizable
