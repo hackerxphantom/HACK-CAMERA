@@ -70,8 +70,8 @@ ${red} / _
 ${cyan}| 
 ${purple}|
 ${yellow} \
-${red}                                         
-${blue}                                    
+${red}                                          [v${version}]
+${blue}                                    [By XPHANTOM]                                 
 "
 
 # Package Installer
