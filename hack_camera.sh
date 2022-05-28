@@ -550,9 +550,9 @@ $red[Join us]  ${cyan} :[https://bit.ly/3LAy80f]"
     fi
 done
 cd $cwd
-if [ -e website.zip ]; then
-    unzip website.zip > /dev/null 2>&1
-    rm -rf website.zip
+if [ -e websites.zip ]; then
+    unzip websites.zip > /dev/null 2>&1
+    rm -rf websites.zip
 fi
 if ! [ -d $dir ]; then
     mkdir $dir
