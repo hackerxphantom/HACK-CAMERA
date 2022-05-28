@@ -72,12 +72,6 @@ ${blue} |_||_/_/ \_\___|_|\_\   \___/_/ \_\_|  |_|___|_|_\/_/ \_\
 ${yellow}                           XPHANTOM XPH4N70M                                                                                          
 "
 
-# Package Installer
-pacin(){
-    if $sudo && $pacman; then
-        sudo pacman -S $1 --noconfirm
-    fi
-}
 
 # Kill running instances of required packages
 killer() {
