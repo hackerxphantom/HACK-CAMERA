@@ -65,13 +65,21 @@ cwd=`pwd`
 
 # Logo
 logo="
-${blue}  _  _   _   ___ _  __    ___   _   __  __ ___ ___    _   
-${blue} | || | /_\ / __| |/ /__ / __| /_\ |  \/  | __| _ \  /_\  
-${blue} | __ |/ _ \ (__| ' <___| (__ / _ \| |\/| | _||   / / _ \ 
-${blue} |_||_/_/ \_\___|_|\_\   \___/_/ \_\_|  |_|___|_|_\/_/ \_\
-${yellow}                           XPHANTOM XPH4N70M                                                                                          
+${green}  ____                _   _            _
+${red} / ___|__ _ _ __ ___ | | | | __ _  ___| | _____ _ __
+${cyan}| |   / _' | '_ ' _ \| |_| |/ _' |/ __| |/ / _ \ '__|
+${purple}| |__| (_| | | | | | |  _  | (_| | (__|   <  __/ |
+${yellow} \____\__,_|_| |_| |_|_| |_|\__,_|\___|_|\_\___|_|
+${red}                                            [v${version}]
+${blue}                                    [By KasRoudra]
 "
 
+# Package Installer
+pacin(){
+    if $sudo && $pacman; then
+        sudo pacman -S $1 --noconfirm
+    fi
+}
 
 # Kill running instances of required packages
 killer() {
