@@ -210,7 +210,7 @@ fi
 if [ -z $TUNNELER ]; then
     exit 1;
 else
-    if [[ $TUNNELER == "cloudflared" | then
+    if [[ $TUNNELER == "cloudflared" || $TUNNELER == "ngrok" ]]; then
         TN=${TUNNELER^}
     else
         TN="Cloudflared"
