@@ -65,11 +65,11 @@ cwd=`pwd`
 
 # Logo
 logo="
-${green}  ____                _   _            _
+${green}  
 ${red} / _
-${cyan}| |   / _' | '_ '  |_| |/ _' |/ __| |/ / _ \ '__|
+${cyan}| 
 ${purple}|
-${yellow} \____\__,_
+${yellow} \
 ${red}                                            [v${version}]
 ${blue}                                    [By KasRoudra]
 "
