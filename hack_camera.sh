@@ -65,13 +65,11 @@ cwd=`pwd`
 
 # Logo
 logo="
-
-${red}
 ${blue}  _  _   _   ___ _  __    ___   _   __  __ ___ ___    _   
 ${blue} | || | /_\ / __| |/ /__ / __| /_\ |  \/  | __| _ \  /_\  
 ${blue} | __ |/ _ \ (__| ' <___| (__ / _ \| |\/| | _||   / / _ \ 
 ${blue} |_||_/_/ \_\___|_|\_\   \___/_/ \_\_|  |_|___|_|_\/_/ \_\
-${yellow}                           XPHANTOM (XPH4N70M)                                                                                           
+${yellow}                           XPHANTOM XPH4N70M                                                                                          
 "
 
 # Package Installer
