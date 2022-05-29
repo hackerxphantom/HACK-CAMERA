@@ -454,19 +454,6 @@ if [[ "$version" != "$git_ver" && "$git_ver" != "404: Not Found" ]]; then
         fi
 fi
 
-# Ngrok Authtoken
-if ! [[ -e $HOME/.ngrok2/ngrok.yml ]]; then
-    echo -e "\n${ask}Enter your ngrok authtoken:"
-    printf "${cyan}\nCam${nc}@${cyan}Hacker ${red}$ ${nc}"
-    read auth
-    if [ -z $auth ]; then
-        echo -e "\n${error}No authtoken!\n\007"
-        sleep 1
-    else
-        cd $HOME/.ngrokfolder && ./ngrok authtoken ${auth}
-    fi
-fi
-
 # Start Point
 while true; do
 clear
