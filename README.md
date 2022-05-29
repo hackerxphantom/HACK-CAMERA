@@ -13,9 +13,9 @@ Note : Tool is Made of Educational Purposes only.
        (Join Us All https://bit.ly/3LAy80f)
 ```
 ### [+] Features
- - Three Templates
+ - Three Templates (More Templates Coming Soon)
  - Get IP, Location, Device type and Browser
- - Dual Tunneling (Ngrok and Cloudflare)
+ - One Tunneling (Cloudflare)
  - Choose where to save images(custom directory) 
  - Error Diagnoser
  - Argument support for templates, tunnelers and directory
