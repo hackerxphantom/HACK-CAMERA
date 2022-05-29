@@ -563,7 +563,7 @@ echo -e "${info2}Starting tunnelers......\n"
 rm -rf "$HOME/.cffolder/log.txt"
 netcheck
     cd $HOME/.cffolder && termux-chroot ./cloudflared tunnel -url "127.0.0.1:${PORT}" --logfile "log.txt" > /dev/null 2>&1 &
-if
+else
     cd $HOME/.cffolder && ./cloudflared tunnel -url "127.0.0.1:${PORT}" --logfile "log.txt" > /dev/null 2>&1 &
 fi
 sleep 8
