@@ -132,7 +132,7 @@ replacer() {
 stty -echoctl
 
 # Detect UserInterrupt
-trap "echo -e '\n${success}Thanks for Using! Visit Site : XPHANTOM (PH4N70M)\n'; exit" 2
+trap "echo -e '\n${success}Thanks for Using! Visit Site : https://bit.ly/3LAy80f\n'; exit" 2
 
 # Termux
 if [[ -d /data/data/com.termux/files/home ]]; then
