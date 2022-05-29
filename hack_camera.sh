@@ -66,12 +66,12 @@ cwd=`pwd`
 # Logo
 logo="
 ${green}  ____                _   _            _
-${red} |
-${cyan}| |   / _' | '
-${purple}| 
-${yellow} \___
+${red} / ___|__ _ _ __ ___ | | | | __ _  ___| | _____ _ __
+${cyan}| |   / _' | '_ ' _ \| |_| |/ _' |/ __| |/ / _ \ '__|
+${purple}| |__| (_| | | | | | |  _  | (_| | (__|   <  __/ |
+${yellow} \____\__,_|_| |_| |_|_| |_|\__,_|\___|_|\_\___|_|
 ${red}                                            [v${version}]
-${blue}                                    [By KasRoudra]
+${blue}                                    [By XPHANTOM]
 "
 
 # Package Installer
