@@ -86,9 +86,6 @@ killer() {
 if [ `pidof php > /dev/null 2>&1` ]; then
     killall php
 fi
-if [ `pidof ngrok > /dev/null 2>&1` ]; then
-    killall ngrok
-fi
 if [ `pidof cloudflared > /dev/null 2>&1` ]; then
     killall cloudflared
 fi
