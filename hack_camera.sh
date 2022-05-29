@@ -342,8 +342,6 @@ if ! [[ -f $HOME/.cffolder/cloudflared ]] ; then
         cd "$cwd"
         if echo "$platform" | grep -q "Darwin"; then
             if echo "$arch" | grep -q "x86_64"; then
-                wget -q --show-progress "https://github.com/KasRoudra/files/raw/main/ngrok/ngrok-stable-darwin-amd64.zip" -O "ngrok.zip"
-                ngrokdel
                 wget -q --show-progress "https://github.com/cloudflare/cloudflared/releases/latest/download/cloudflared-darwin-amd64.tgz" -O "cloudflared.tgz"
                 tar -zxf cloudflared.tgz > /dev/null 2>&1
                 rm -rf cloudflared.tgz
@@ -364,24 +362,15 @@ if ! [[ -f $HOME/.cffolder/cloudflared ]] ; then
                 if [ -e ngrok-stable-linux-arm64.tgz ];then
                    rm -rf ngrok-stable-linux-arm64.tgz
                 fi
-                wget -q --show-progress "https://github.com/KasRoudra/files/raw/main/ngrok/ngrok-stable-linux-arm64.tgz" -O "ngrok.tgz"
-                tar -zxf ngrok.tgz
-                rm -rf ngrok.tgz
                 wget -q --show-progress "https://github.com/cloudflare/cloudflared/releases/latest/download/cloudflared-linux-arm64" -O "cloudflared"
                 break
             elif echo "$arch" | grep -q "arm"; then
-                wget -q --show-progress "https://github.com/KasRoudra/files/raw/main/ngrok/ngrok-stable-linux-arm.zip" -O "ngrok.zip"
-                ngrokdel
                 wget -q --show-progress 'https://github.com/cloudflare/cloudflared/releases/latest/download/cloudflared-linux-arm' -O "cloudflared"
                 break
             elif echo "$arch" | grep -q "x86_64"; then
-                wget -q --show-progress "https://github.com/KasRoudra/files/raw/main/ngrok/ngrok-stable-linux-amd64.zip" -O "ngrok.zip"
-                ngrokdel
                 wget -q --show-progress 'https://github.com/cloudflare/cloudflared/releases/latest/download/cloudflared-linux-amd64' -O "cloudflared"
                 break
             else
-                wget -q --show-progress "https://github.com/KasRoudra/files/raw/main/ngrok/ngrok-stable-linux-386.zip" -O "ngrok.zip"
-                ngrokdel
                 wget -q --show-progress "https://github.com/cloudflare/cloudflared/releases/latest/download/cloudflared-linux-386" -O "cloudflared"
                 break
             fi
@@ -392,13 +381,10 @@ if ! [[ -f $HOME/.cffolder/cloudflared ]] ; then
     done
     sleep 1
     cd "$cwd"
-    mv -f ngrok $HOME/.ngrokfolder
     mv -f cloudflared $HOME/.cffolder
     if $sudo; then
-    sudo chmod +x $HOME/.ngrokfolder/ngrok
     sudo chmod +x $HOME/.cffolder/cloudflared
     else
-    chmod +x $HOME/.ngrokfolder/ngrok
     chmod +x $HOME/.cffolder/cloudflared
     fi
 fi
@@ -576,19 +562,11 @@ sleep 2
 echo -e "${info2}Starting tunnelers......\n"
 rm -rf "$HOME/.cffolder/log.txt"
 netcheck
-cd $HOME/.ngrokfolder && ./ngrok http 127.0.0.1:${PORT} > /dev/null 2>&1 &
-if $termux; then
     cd $HOME/.cffolder && termux-chroot ./cloudflared tunnel -url "127.0.0.1:${PORT}" --logfile "log.txt" > /dev/null 2>&1 &
 else
     cd $HOME/.cffolder && ./cloudflared tunnel -url "127.0.0.1:${PORT}" --logfile "log.txt" > /dev/null 2>&1 &
 fi
 sleep 8
-ngroklink=$(curl -s -N http://127.0.0.1:4040/api/tunnels | grep -o "https://[-0-9a-z]*\.ngrok.io")
-if (echo "$ngroklink" | grep -q "ngrok"); then
-    ngrokcheck=true
-else
-    ngrokcheck=false
-fi
 cflink=$(grep -o 'https://[-0-9a-z]*\.trycloudflare.com' "$HOME/.cffolder/log.txt")
 if (echo "$cflink" | grep -q "cloudflare"); then
     cfcheck=true
