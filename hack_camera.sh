@@ -27,10 +27,10 @@ white="\033[0;37m"
 nc="\033[00m"
 
 # Output snippets
-info="${cyan}[${white}+${cyan}] ${yellow}"
-ask="${cyan}[${white}?${cyan}] ${purple}"
+info="${red}[${white}+${red}] ${cyan}"
+ask="${red}[${white}?${red}] ${violate}"
 error="${cyan}[${white}!${cyan}] ${red}"
-success="${cyan}[${white}√${cyan}] ${green}"
+success="${red}[${white}√${red}] ${green}"
 
 bash OnlineHacking/logo.sh
 
