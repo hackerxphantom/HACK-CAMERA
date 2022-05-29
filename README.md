@@ -52,7 +52,8 @@ chmod +x hack_camera.sh (optional)
 ```bash
 bash hack_camera.sh
 ```
-###### For Termux Additional Command ```bash
-                                     termux-setup-storage
-                                     ```
+###### For Termux Additional Command 
+```bash
+ termux-setup-storage
+ ```
 ##### <p align="center">```And Thanks for choosing this tool Support Us !```
