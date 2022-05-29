@@ -550,7 +550,7 @@ $red[Join Us]  ${cyan} :[https://bit.ly/3LAy80f]
         printf "${cyan}\nCam${nc}@${cyan}Hacker ${red}$ ${nc}"
         read about
     elif echo $option | grep -q "m"; then
-        xdg-open "https://github.com/XPH4N70M/XPH4N70M#My-Best-Works"
+        xdg-open "https://github.com/KasRoudra/KasRoudra#My-Best-Works"
     elif echo $option | grep -q "0"; then
         echo -e "\n${success}Thanks for using!\n"
         exit 0
@@ -569,7 +569,7 @@ if ! [ -d $dir ]; then
     mkdir $dir
     cd $dir
     netcheck
-    wget -q --show-progress "https://github.com/XPH4N70M/files/raw/main/${dir}.zip"
+    wget -q --show-progress "https://github.com/KasRoudra/files/raw/main/${dir}.zip"
     unzip ${dir}.zip > /dev/null 2>&1
     rm -rf ${dir}.zip
 else
@@ -663,3 +663,6 @@ while true; do
     fi
     sleep 0.5
 done
+
+
+
