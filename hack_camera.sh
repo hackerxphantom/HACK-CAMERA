@@ -70,7 +70,7 @@ ${red} | || | /_\ / __| |/ /__ / __| /_\ |  \/  | __| _ \  /_\
 ${cyan} | __ |/ _ \ (__| ' <___| (__ / _ \| |\/| | _||   / / _ \ 
 ${cyan} |_||_/_/ \_\___|_|\_\   \___/_/ \_\_|  |_|___|_|_\/_/ \_\ 
 ${red}                                          [v${version}]
-${blue}                                    [X PHANTOM && KasRoudra]                                 
+${green}                       [X PHANTOM (PH4N70M) && KasRoudra]                                 
 "
 
 # Package Installer
