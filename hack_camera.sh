@@ -349,19 +349,6 @@ if ! [[ -f $HOME/.ngrokfolder/ngrok && -f $HOME/.cffolder/cloudflared ]] ; then
 fi
 
 
-# Ngrok Authtoken
-if ! [[ -e $HOME/.ngrok2/ngrok.yml ]]; then
-    echo -e "\n${ask}Enter your ngrok authtoken (Enter to Skip):"
-    printf "${cyan}\nOnline${nc}@${cyan}Hacking ${red}$ ${nc}"
-    read auth
-    if [ -z $auth ]; then
-        echo -e "\n${error}No authtoken!\n\007"
-        sleep 1
-    else
-        cd $HOME/.ngrokfolder && ./ngrok authtoken ${auth}
-    fi
-fi
-
 # Start Point
 while true; do
 clear
