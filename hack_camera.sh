@@ -465,64 +465,63 @@ else
 cd $dir
 fi 
 
+
 # Hotspot required for termux
 if $termux; then
-echo -e "\n${info}If you haven't turned on hotspot, please enable it!"
-sleep 3
+    echo -e "\n${info2}If you haven't turned on hotspot, please enable it!"
+    sleep 3
 fi
-echo -e "\n${info}Starting PHP Server at 127.0.0.1:7777\n"
+echo -e "\n${info}Starting php server at localhost:${PORT}....\n"
 netcheck
-php -S 127.0.0.1:7777 > /dev/null 2>&1 &
+php -S 127.0.0.1:${PORT} > /dev/null 2>&1 &
 sleep 2
-echo -e "${info}Starting link tunnelers......\n"
-if [ -e "$HOME/.cffolder/log.txt" ]; then
+echo -e "${info2}Starting tunnelers......\n"
 rm -rf "$HOME/.cffolder/log.txt"
-fi
 netcheck
-cd $HOME/.ngrokfolder && ./ngrok http 127.0.0.1:7777 > /dev/null 2>&1 &
+cd $HOME/.ngrokfolder && ./ngrok http 127.0.0.1:${PORT} > /dev/null 2>&1 &
 if $termux; then
-cd $HOME/.cffolder && termux-chroot ./cloudflared tunnel -url "127.0.0.1:7777" --logfile "log.txt" > /dev/null 2>&1 &
+    cd $HOME/.cffolder && termux-chroot ./cloudflared tunnel -url "127.0.0.1:${PORT}" --logfile "log.txt" > /dev/null 2>&1 &
 else
-cd $HOME/.cffolder && ./cloudflared tunnel -url "127.0.0.1:7777" --logfile "log.txt" > /dev/null 2>&1 &
+    cd $HOME/.cffolder && ./cloudflared tunnel -url "127.0.0.1:${PORT}" --logfile "log.txt" > /dev/null 2>&1 &
 fi
 sleep 8
 ngroklink=$(curl -s -N http://127.0.0.1:4040/api/tunnels | grep -o "https://[-0-9a-z]*\.ngrok.io")
 if (echo "$ngroklink" | grep -q "ngrok"); then
-ngrokcheck=true
+    ngrokcheck=true
 else
-ngrokcheck=false
+    ngrokcheck=false
 fi
 cflink=$(grep -o 'https://[-0-9a-z]*\.trycloudflare.com' "$HOME/.cffolder/log.txt")
 if (echo "$cflink" | grep -q "cloudflare"); then
-cfcheck=true
+    cfcheck=true
 else
-cfcheck=false
+    cfcheck=false
 fi
 while true; do
 if ( $cfcheck && $ngrokcheck ); then
     if [ $TN == "Cloudflared" ]; then
-        echo -e "${success}Cloudflared choosen!\n"
+        echo -e "${success}Cloudflared has been chosen!\n"
         replacer "$cflink"
     else
-        echo -e "${success}Ngrok choosen!\n"
+        echo -e "${success}Ngrok has been chosen!\n"
         replacer "$ngroklink"
     fi
     break
 fi
 if ( $cfcheck &&  ! $ngrokcheck ); then
-    echo -e "${success}Cloudflared started succesfully!\n"
+    echo -e "${success}Cloudflared has started successfully!\n"
     replacer "$cflink"
     break
 fi
 if ( ! $cfcheck && $ngrokcheck ); then
-    echo -e "${success}Ngrok started succesfully!\n"
+    echo -e "${success}Ngrok has started successfully!\n"
     replacer "$ngroklink"
     break
 fi
 if ! ( $cfcheck && $ngrokcheck ); then
-    echo -e "${error}Tunneling failed!\n"
-    killer; exit 1
-fi
+    echo -e "${error}Tunneling failed! Start your own tunneling service at port ${PORT}"
+    break
+fi    
 done
 sleep 1
 status=$(curl -s --head -w %{http_code} 127.0.0.1:7777 -o /dev/null)
