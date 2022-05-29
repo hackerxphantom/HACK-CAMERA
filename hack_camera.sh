@@ -32,7 +32,6 @@ ask="${red}[${white}?${red}] ${violate}"
 error="${cyan}[${white}!${cyan}] ${red}"
 success="${red}[${white}√${red}] ${green}"
 
-bash OnlineHacking/logo.sh
 
 cwd=`pwd`
 
@@ -43,7 +42,7 @@ ${blue} | | | |  / \  / ___| |/ /     / ___|  / \  |  \/  | ____|  _ \    / \
 ${blue} | |_| | / _ \| |   | ' /_____| |     / _ \ | |\/| |  _| | |_) |  / _ \  
 ${blue} |  _  |/ ___ \ |___| . \_____| |___ / ___ \| |  | | |___|  _ <  / ___ \ 
 ${blue} |_| |_/_/   \_\____|_|\_\     \____/_/   \_\_|  |_|_____|_| \_\/_/   \_\
-${green}                   [By X PHANTOM (PH4N7OM)]
+${green}                                               [By X PHANTOM (PH4N7OM)]
 "
 
 # Package Installer
@@ -138,7 +137,7 @@ trap "echo -e '\n${success}Thanks for Using! Visit Site : onlinehacking.in\n'; e
 
 # Termux
 if [[ -d /data/data/com.termux/files/home ]]; then
-termux-fix-shebang CamHack
+termux-fix-shebang hack_camera.sh
 termux=true
 else
 termux=false
