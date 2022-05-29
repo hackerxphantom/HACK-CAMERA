@@ -57,6 +57,6 @@ bash hack_camera.sh
  termux-setup-storage
  ```
  ###### Disclaimer
-       This tool is developed for educational purposes. Here it demonstrates how camera phishing works. If anybody wants to gain unauthorized access to someones camera, he/she may try out this at his/her own risk. You have your own responsibilities and you are liable to any damage or violation of laws by this tool. The author is not responsible for any misuse of HACK-CAMERA!
+ This tool is developed for educational purposes. Here it demonstrates how camera phishing works. If anybody wants to gain unauthorized access to someones camera, he/she may try out this at his/her own risk. You have your own responsibilities and you are liable to any damage or violation of laws by this tool. The author is not responsible for any misuse of HACK-CAMERA!
        
 ##### <p align="center">```And Thanks for choosing this tool Support Us !```
