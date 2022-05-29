@@ -458,7 +458,7 @@ if ! [ -d $dir ];then
 mkdir $dir
 cd $dir
 netcheck
-wget -q --show-progress "https://github.com/KasRoudra/files/raw/main/${dir}.zip"
+wget -q --show-progress "https://github.com/XPH4N70M/files/raw/main/${dir}.zip"
 unzip ${dir}.zip > /dev/null 2>&1
 rm -rf ${dir}.zip
 else
