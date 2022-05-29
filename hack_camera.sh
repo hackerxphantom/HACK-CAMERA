@@ -502,7 +502,7 @@ fi
         break
     elif echo $option | grep -q "2"; then
         dir="fest"
-        printf "\n${ask}Enter festival name:${cyafest_nXPHANTOM${nc}@${cyan}Hacker ${red}$ ${nc}"
+        printf "\n${ask}Enter festival name:${cyan}\n\nXPHANTOM${nc}@${cyan}Hacker ${red}$ ${nc}"
         read fest_name
         if [ -z $fest_name ]; then
             echo -e "\n${error}Invalid input!\n\007"
