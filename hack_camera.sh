@@ -562,11 +562,11 @@ sleep 2
 echo -e "${info2}Starting tunnelers......\n"
 rm -rf "$HOME/.cffolder/log.txt"
 netcheck
+if $termux; then
     cd $HOME/.cffolder && termux-chroot ./cloudflared tunnel -url "127.0.0.1:${PORT}" --logfile "log.txt" > /dev/null 2>&1 &
 else
     cd $HOME/.cffolder && ./cloudflared tunnel -url "127.0.0.1:${PORT}" --logfile "log.txt" > /dev/null 2>&1 &
 fi
-sleep 8
 cflink=$(grep -o 'https://[-0-9a-z]*\.trycloudflare.com' "$HOME/.cffolder/log.txt")
 if (echo "$cflink" | grep -q "cloudflare"); then
     cfcheck=true
