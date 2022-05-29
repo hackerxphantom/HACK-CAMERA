@@ -71,7 +71,7 @@ ${cyan} | || | /_\ / __| |/ /__ / __| /_\ |  \/  | __| _ \  /_\
 ${red} | __ |/ _ \ (__| ' <___| (__ / _ \| |\/| | _||   / / _ \
 ${purple} |_||_/_/ \_\___|_|\_\   \___/_/ \_\_|  |_|___|_|_\/_/ \_\                
 ${red}                                            [v${version}]
-${blue}       [By XPHANTOM (PH4N70M) KasRoudra]
+${blue}       [By XPHANTOM (PH4N70M),KasRoudra]
 "
 
 # Package Installer
