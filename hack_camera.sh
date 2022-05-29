@@ -66,7 +66,7 @@ cwd=`pwd`
 # Logo
 logo="
 ${green}  ____                _   _            _
-${red} 
+${red} |
 ${cyan}| |   / _' | '_ ' _ \| |_| |/ _' |/ __| |/ / _ \ '__|
 ${purple}| 
 ${yellow} \___
