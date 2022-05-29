@@ -21,10 +21,7 @@ Note : Tool is Made of Educational Purposes only.
  - Error Diagnoser
  - Argument support for templates, tunnelers and directory
        
-###### One Line Command
-```bash
-wget https://raw.githubusercontent.com/XPH4N70M/HACK-CAMERA/main/hack_camera.sh && bash hack_camera.sh
-```
+
 ###### Installation
 ```bash
 apt update && apt upgrade -y
