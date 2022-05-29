@@ -63,7 +63,16 @@ version="1.5"
 
 cwd=`pwd`
 
-
+# Logo
+logo="
+${green}  ____                _   _            _
+${red} |
+${cyan}| |   / _' | '
+${purple}| 
+${yellow} \___
+${red}                                            [v${version}]
+${blue}                                    [By KasRoudra]
+"
 
 # Package Installer
 pacin(){
