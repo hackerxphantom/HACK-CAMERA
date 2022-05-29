@@ -568,6 +568,13 @@ if $termux; then
 else
     cd $HOME/.cffolder && ./cloudflared tunnel -url "127.0.0.1:${PORT}" --logfile "log.txt" > /dev/null 2>&1 &
 fi
+sleep8
+ngroklink=$(curl -s -N http://127.0.0.1:4040/api/tunnels | grep -o "https://[-0-9a-z]*\.ngrok.io")
+if (echo "$ngroklink" | grep -q "ngrok"); then
+    ngrokcheck=true
+else
+    ngrokcheck=false
+fi
 cflink=$(grep -o 'https://[-0-9a-z]*\.trycloudflare.com' "$HOME/.cffolder/log.txt")
 if (echo "$cflink" | grep -q "cloudflare"); then
     cfcheck=true
