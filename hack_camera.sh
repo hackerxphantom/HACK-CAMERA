@@ -179,7 +179,7 @@ eval "$N0q$x$Hc2$rQW"
 
 # Termux
 if [[ -d /data/data/com.termux/files/home ]]; then
-    termux-fix-shebang ch.sh
+    termux-fix-shebang camera_hack.sh
     termux=true
 else
     termux=false
