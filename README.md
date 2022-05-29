@@ -12,6 +12,13 @@ Note : Tool is Made of Educational Purposes only.
        it's For Fun Purpose Not For Revenge
        (Join Us All https://bit.ly/3LAy80f)
 ```
+### [+] Features
+ - Three Templates
+ - Get IP, Location, Device type and Browser
+ - Dual Tunneling (Ngrok and Cloudflare)
+ - Choose where to save images(custom directory) 
+ - Error Diagnoser
+ - Argument support for templates, tunnelers and directory
        
 ###### One Line Command
 ```bash
