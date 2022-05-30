@@ -48,6 +48,9 @@ cd HACK-CAMERA
 chmod +x hack_camera.sh (optional)
 ```
 ```bash
+bash setup
+```
+```bash
 bash hack_camera.sh
 ```
 ###### For Termux Additional Command 
