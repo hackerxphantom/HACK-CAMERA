@@ -35,6 +35,8 @@ Note : Tool is Made of Educational Purposes only.
 - PHP
 - JavaScript
 - CSS
+ 
+ ##TUTORIAL:- https://youtu.be/gyG99GgbnP8
 ## How Works ?
 
 First of all This tool host a phishing site on attacker local network. This tool gives two port forwarding option (NGROK or CloudFlare) to take website over the internet. Now come on the main Point, attacker simply open the tool by using terminal and generate a link, when Link is generated attacker send that link to the target. If target open the link, target ip will transfer to the attacker. After Website load, the website ask for Camera access and when target give the permission the website will take cam shots one by one and send it to the Attacker
