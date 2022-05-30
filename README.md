@@ -21,6 +21,13 @@ Note : Tool is Made of Educational Purposes only.
  - Error Diagnoser
  - Argument support for templates, tunnelers and directory
        
+ ## The Tool is for :
+- Kali Linux
+- Termux
+- MacOS
+- Ubuntu
+- Perrot Sec OS
+- Garuda Linux     
 
 ###### Installation
 ```bash
