@@ -4,8 +4,8 @@
 # Version    : 2.1
 # Description: CameraHackHack is a camera Phishing tool. Send a phishing link to victim, if he/she gives access to camera, his/her photo will be captured!
 # Author     : X PHANTOM PH4N70M
-# Github     : https://github.com/XPH4N70M/
-# Join Us    : https://bit.ly/3LAy80f
+# Github     : https://github.com/hackerxphantom
+# Join Us    : https://bit.ly/3PV3S3r
 # Date       : 29-05-2022
 # Language   : Shell, HTML, Css
 # Portable File
@@ -422,13 +422,13 @@ read option
 $red[Version]    ${cyan} :[2.1]
 $red[Description]${cyan} :[Camera Phishing tool]
 $red[Author]     ${cyan} :[XPHANTOM PH4N70M]
-$red[Github]     ${cyan} :[https://github.com/XPH4N70M] 
-$red[Join us]    ${cyan} :[https://bit.ly/3LAy80f]
+$red[Github]     ${cyan} :[https://github.com/hackerxphantom] 
+$red[Join us]    ${cyan} :[https://bit.ly/3PV3S3r]
 $red[Telegarm]   ${cyan} :[https://t.me/x_PH4N7OM]"
 printf "${cyan}\nXPHANTOM${nc}@${cyan}XPH4N70M ${red}$ ${nc}"
 read about
     elif echo $option | grep -q "m"; then
-        xdg-open "https://bit.ly/3LAy80f"
+        xdg-open "https://bit.ly/3PV3S3r"
     elif echo $option | grep -q "0"; then
         exit 0
     else
